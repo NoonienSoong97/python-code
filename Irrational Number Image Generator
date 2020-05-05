@@ -1,0 +1,26 @@
+#Creating a list of digits of Irrational Number
+a = 64
+p = list(str(n(pi, digits = a)))
+p.remove('.')
+p = [int(i) for i in p];
+
+
+
+#Setting up the dimensions for the Matrix
+m = sqrt(a)
+n = m+1
+r = m*n
+s = range(r)[0:r:m][0:n]
+t = [s[i] for i in range(len(s))][1:n]
+
+
+
+#Creating the Matrix
+import matplotlib.cm; matplotlib.cm.datad.keys()
+p1 = [p[s[i]:t[i]] for i in range(n-1)]
+mat1 = matrix_plot(p1, frame = False, axes = False, cmap = 'Spectral', dpi = 100)
+
+
+
+#Saving the image to file
+mat1.save('image4.png')
