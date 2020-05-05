@@ -5,4 +5,4 @@ This repository includes coding that I have created, and I have annotated any co
 
 List of codes:
   1.  File Generator code
-  2.  
+  2.  Irrational number image genrator
