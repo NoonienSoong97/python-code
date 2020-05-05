@@ -1,0 +1,48 @@
+#Generating data
+
+#Varibles
+a = 128
+b = 10^6
+
+#Calling function
+p = [n(abs(cos((i*pi)/a)), digits = b) for i in range(a*2)]
+
+#..........................................................
+
+#Generating filenames in memory
+
+#Creating increamented filenames
+fn = []
+for i in range(a*2):
+    filename = 'cos-pi-%d-' % i
+    fn.append(filename)
+
+#Format of incremented files:
+#cos-pi-n-128.csv which represents
+#cos((n/128)pi) for a range of 2pi radians
+
+d = list([str(a) for i in range(a*2)])
+file = [fn[i]+d[i]+'.csv' for i in range(a*2)]
+
+#..........................................................
+
+#writing data from called function to generated filenames
+
+#generating an incremented function of wfn
+#for use in writing the data from the called
+#function to the associated filename
+
+da = list([str(i) for i in range(a*2)])
+w = ['wf' for i in range(a*2)]
+
+for i in range(a*2):
+    
+    f = [w[i]+da[i] for i in range(a*2)]
+    
+    with open(file[i],'w') as f[i]:
+        
+        #this line of code was given to me by username
+        # Sébastien at https://ask.sagemath.org/
+        results = '\n'.join(b for b in str(p[i]))
+        
+        f[i].write(results)
