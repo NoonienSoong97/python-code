@@ -1,0 +1,17 @@
+#Creating a plot of the Return Map
+#of Trig function  of prime numbers.
+
+#Variables
+a = 100
+
+#List of primes up to range a
+p = [i for i in prime_range(a)]
+
+#Generated a list of sin of prime numbers
+sp = [sin(p[i]) for i in range(len(p))]
+
+#Generate Return Plot
+sprm = [(sp[i],sp[i+1]) for i in range(len(sp)-1)]
+
+#Plot Return Plot
+list_plot(sprm, dpi = 640, axes = False, size = 1)
