@@ -1,0 +1,30 @@
+#Creating a binary list of prime numbers
+a = range(100)
+p = [is_prime(a[i]) for i in range(len(a))]
+b = []
+for i in range(len(p)):
+    if p[i] == False:
+        b.append(0)
+    elif p[i] == True:
+        b.append(1)
+
+
+
+#Setting up the dimensions for the Matrix
+m = sqrt(len(b))
+n = m+1
+r = m*n
+s = range(r)[0:r:m][0:n]
+t = [s[i] for i in range(len(s))][1:n]
+
+
+
+#Creating the Matrix
+import matplotlib.cm; matplotlib.cm.datad.keys()
+p1 = [b[s[i]:t[i]] for i in range(n-1)]
+mat1 = matrix_plot(p1, frame = False, axes = False, dpi = 100)
+
+
+
+#Saving the image to file
+mat1.save('image4.png')
