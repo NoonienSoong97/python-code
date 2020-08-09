@@ -5,5 +5,7 @@ This repository includes coding that I have created, and I have annotated any co
 
 List of codes:
   1.  File Generator code
-  2.  Irrational number image genrator
+  2.  Irrational number image generator
   3.  Trigonometric Return Map
+  4.  Trigonometric function generator
+  5.  Prime number musical note generator

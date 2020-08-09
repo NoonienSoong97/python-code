@@ -1,0 +1,38 @@
+#Creating Return Map
+a = 1000
+p = [i for i in prime_range(a)]
+sp = [sin(p[i]) for i in range(len(p))]
+sprm = [(sp[i],sp[i+1]) for i in range(len(sp)-1)]
+
+#Solving for theta of the points from origin
+Pi = n(pi, digits = 100)
+theta = [arctan(sprm[i][1]/sprm[i][0]) for i in range(len(sprm))]
+thetad = [abs(theta[i]*Pi) for i in range(len(theta))]
+
+#Note length: Magnitude of the vector
+r = [sqrt(abs(sprm[i][1])^2+abs(sprm[i][0])^2) for i in range(len(sprm)-1)]
+n = [i*sqrt(2)/9 for i in range(10)]
+#Whole Note: n1, Half Note n2, Quarter Note n4, etc.
+n1 = [(i,val) for i,val in enumerate(r) if n[8]<=val<n[9]];
+n2 = [(i,val) for i,val in enumerate(r) if n[7]<=val<n[8]];
+n4 = [(i,val) for i,val in enumerate(r) if n[6]<=val<n[7]];
+n8 = [(i,val) for i,val in enumerate(r) if n[5]<=val<n[6]];
+n16 = [(i,val) for i,val in enumerate(r) if n[4]<=val<n[5]];
+n32 = [(i,val) for i,val in enumerate(r) if n[3]<=val<n[4]];
+n64 = [(i,val) for i,val in enumerate(r) if n[2]<=val<n[3]];
+n128 = [(i,val) for i,val in enumerate(r) if n[1]<=val<n[2]];
+n256 = [(i,val) for i,val in enumerate(r) if n[0]<=val<=n[1]];
+
+#Note value: Angle of the vector
+A = [(i,val) for i,val in enumerate(thetad) if 0<=val<(1*2*Pi)/12]
+D = [(i,val) for i,val in enumerate(thetad) if (1*2*Pi)/12<=val<(2*2*Pi)/12]
+G = [(i,val) for i,val in enumerate(thetad) if (2*2*Pi)/12<=val<(3*2*Pi)/12]
+C = [(i,val) for i,val in enumerate(thetad) if (3*2*Pi)/12<=val<(4*2*Pi)/12]
+F = [(i,val) for i,val in enumerate(thetad) if (4*2*Pi)/12<=val<(5*2*Pi)/12]
+Bf = [(i,val) for i,val in enumerate(thetad) if (5*2*Pi)/12<=val<(6*2*Pi)/12]
+Ef = [(i,val) for i,val in enumerate(thetad) if (6*2*Pi)/12<=val<(7*2*Pi)/12]
+Af = [(i,val) for i,val in enumerate(thetad) if (7*2*Pi)/12<=val<(8*2*Pi)/12]
+Df = [(i,val) for i,val in enumerate(thetad) if (8*2*Pi)/12<=val<(9*2*Pi)/12]
+GfFs = [(i,val) for i,val in enumerate(thetad) if (9*2*Pi)/12<=val<(10*2*Pi)/12]
+B = [(i,val) for i,val in enumerate(thetad) if (10*2*Pi)/12<=val<(11*2*Pi)/12]
+E = [(i,val) for i,val in enumerate(thetad) if (11*2*Pi)/12<=val<(12*2*Pi)/12]
