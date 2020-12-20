@@ -18,19 +18,28 @@ n = [i*a for i in range(len(plst)+1)][1:len(plst)]
 mat = [plst[m[i]:n[i]] for i in range(len(plst)/a)]
 
 #Generating filenames in memory
-#Creating incremented filenames
+#Creating increamented filenames
 fn = []
 for i in range(len(mat)):
     filename = 'pi-%d' % i
     fn.append(filename)
 
 #Format of incremented files:
-#axa-mat-pi-n.cvs
+#axa-mat-pi-n.cvs & .png
 d = list([str(a)+str(x)+str(a)+"-"+"mat"+"-" for i in range(len(mat))])
 file = [d[i]+fn[i]+'.csv' for i in range(len(mat))]
+filep = [d[i]+fn[i]+'.png' for i in range(len(mat))]
 
 #Using numpy to export files into cvs format
 import numpy
 for i in range(len(mat)):
     b = numpy.asarray(mat[i])
     numpy.savetxt(file[i]+".csv", b, delimiter=",", fmt='%1.0f', newline='\n')
+
+#Creating and image
+import matplotlib.cm; matplotlib.cm.datad.keys()
+matp = [matrix_plot(mat[i], frame = False, cmap = 'rainbow', axes = False, dpi = 300) for i in range(len(mat))]
+
+#Export files into png format
+for i in range(len(matp)):
+    matp[i].save(filep[i])
